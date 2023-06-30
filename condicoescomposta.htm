@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condição Composta JavaScript - HTML</title>
+</head>
+<body>
+    <h1> Sistema de Nacionalidade</h1>
+    Qual sua nacionalidade <input type="text" name="nacionalidade" id="txtnac">?
+    <input type="button" value="verificar" onclick="escolher()">
+    <div id="res">
+
+    </div>
+    <script>
+        function escolher(){
+            var txtn = window.document.getElementById('txtnac')
+            var res = window.document.getElementById('res')
+            var nac = txtn.value            
+            res.innerHTML = `<p>Você é ${nac} !</p>`
+            if(nac=='Brasil'){
+                res.innerHTML=`<p>Você é Brasileiro</p>`
+            } else {
+                res.innerHTML=`<p>Você é Estrangeiro</p>`
+            }
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agradecimento</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+
+        .container {
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 40px;
+          text-align: center;
+          background-color: #fff;
+          border-radius: 5px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+          color: #333;
+        }
+
+        p {
+          color: #666;
+          margin-bottom: 10px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <div class="container">
+    <h1>Obrigado!</h1>
+    <p>Recebemos o seu formulário de contato.</p>
+    <p>Entrarei em contato em breve.</p>
+  </div>
+
+  <script src="script.js"></script>
+-->
+
+    <div class="container">
+      <h1>Obrigado pelo envio do formulario</h1>
+      <p id="dados"></p>
+    </div>
+
+
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        // Função para decodificar os cookies
+        function decodeCookie(cookie) {
+          return decodeURIComponent(cookie.split("=")[1]);
+        }
+
+        // Obter os cookies gravados
+        var cookies = document.cookie.split(";");
+
+        // Variáveis para armazenar os valores dos cookies
+        var nome = "";
+        var email = "";
+        var msg = "";
+
+        // Alterar sobre os cookies e obter os valores desejados
+        for (var i = 0; i < cookies.length; i++) {
+          var cookie = cookies[i].trim();
+          if (cookie.startsWith("nome=")) {
+            nome = decodeCookie(cookie);
+          } else if (cookie.startsWith("email=")) {
+            email = decodeCookie(cookie);
+          } else if (cookie.startsWith("msg=")) {
+            msg = decodeCookie(cookie);
+          }
+        }
+
+        // Exibir os valores no parágrafo
+        var dadosParagrafo = document.getElementById("dados");
+        dadosParagrafo.textContent =
+          "Nome: " + nome + ", Email: " + email + ", Mensagem: " + msg;
+      });
+    </script>
+
+    
+  </body>
+</html>
